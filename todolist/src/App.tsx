@@ -1,14 +1,16 @@
 import "./App.css";
+import DisplayTaskField from "./container/DisplayTaskField";
 import Title from "./components/Title";
 import AddTaskField from "./container/AddTaskField";
-import CountTaskField from "./container/NotiTaskField";
+import NotiTaskField from "./container/NotiTaskField";
 
 function App() {
   return (
     <div className="todo">
-      <Title label="Todo List" variant={"h3"}></Title>
+      <Title variant="h3">Todo-List</Title>
       <AddTaskField></AddTaskField>
-      <CountTaskField count={1}></CountTaskField>
+      <DisplayTaskField></DisplayTaskField>
+      <NotiTaskField count={1}></NotiTaskField>
     </div>
   );
 }

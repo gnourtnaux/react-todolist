@@ -3,7 +3,8 @@
   src: url(./assets/fonts/Poppins/Poppins-Regular.ttf);
 }
 
-.body {
+body {
+  font-family: "Poppins", sans-serif;
   width: 100%;
   margin: 0;
   padding: 0;

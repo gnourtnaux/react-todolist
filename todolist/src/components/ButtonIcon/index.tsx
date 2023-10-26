@@ -1,19 +1,16 @@
-import { Button } from "@mui/material";
-import "./index.css";
-import { ReactNode } from "react";
+import { styled } from "@mui/material/styles";
+import MuiButtonIcon, { IconButtonProps } from "@mui/material/IconButton";
+import "/src/assets/fonts/Poppins/Poppins-Bold.ttf";
 
-type ButtonIconProps = {
-  icon: ReactNode;
-  label: string;
-};
+const CustomButtonIcon = styled(MuiButtonIcon)({
+  backgroundColor: "inherit",
+  fontWeight: "bold",
+}) as typeof MuiButtonIcon;
 
-const ButtonIcon = (props: ButtonIconProps) => {
-  const { icon, label } = props;
-  return (
-    <Button className="button-icon" startIcon={icon}>
-      {label}
-    </Button>
-  );
+interface TButtonProps extends IconButtonProps {}
+
+const ButtonIcon = (props: TButtonProps) => {
+  return <CustomButtonIcon {...props}></CustomButtonIcon>;
 };
 
 export default ButtonIcon;

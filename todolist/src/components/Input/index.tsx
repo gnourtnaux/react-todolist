@@ -7,7 +7,8 @@ const CustomInput = styled(MuiInput)({
   color: "rgba(122,131,135,255)",
   fontWeight: "bold",
   fontSize: "20px",
-  paddingLeft: "10px",
+  paddingLeft: "20px",
+  paddingRight: "20px",
   borderRadius: "30px",
   border: "2px solid rgba(122,131,135,255)",
 }) as typeof MuiInput;

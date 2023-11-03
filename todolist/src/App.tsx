@@ -1,16 +1,28 @@
+import React from "react";
 import "./App.css";
 import DisplayTaskField from "./container/DisplayTaskField";
 import Title from "./components/Title";
 import AddTaskField from "./container/AddTaskField";
 import NotiTaskField from "./container/NotiTaskField";
 import Box from "./components/Box";
+import { dataTodo } from "./dataTodo/constant";
 
 function App() {
+  const countTasks = () => {
+    let countNum = 0;
+    dataTodo.forEach((e) => {
+      e.isRemove ? countNum : countNum++;
+    });
+    return countNum;
+  };
   return (
     <Box
       sx={{
         width: "60%",
-        backgroundColor: "rgba(16, 44, 50, 255)",
+        overflow: "hidden",
+        backgroundColor: "hsla(0, 0%, 0%, 0.3)",
+        backdropFilter: "blur(24px)",
+        WebkitBackdropFilter: "blur(24px)",
         color: "rgba(169, 185, 186, 255)",
         padding: "1rem",
         borderRadius: "15px",
@@ -19,7 +31,7 @@ function App() {
       <Title variant="h3">Todo-List</Title>
       <AddTaskField></AddTaskField>
       <DisplayTaskField></DisplayTaskField>
-      <NotiTaskField count={1}></NotiTaskField>
+      <NotiTaskField count={countTasks()}></NotiTaskField>
     </Box>
   );
 }
